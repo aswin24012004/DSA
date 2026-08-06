@@ -13,10 +13,18 @@ public class ReverseArray {
             left++;
             right--;
         }
+        
     }
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3,4,5,6,7,8,9,0};
+         
+        System.out.print("Before Revering ");
+         for (int i: arr) {
+            System.out.print(i+" ");
+        }
         reverseAnArray(arr);
+        
+        System.out.print("After Revering ");
         for (int i: arr) {
             System.out.print(i+" ");
         }
