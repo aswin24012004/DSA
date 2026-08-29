@@ -1,5 +1,4 @@
 package TwoPointers;
-
 public class TrappingRainWater {
     public static int solution(int[] height) {
         int n = height.length;
