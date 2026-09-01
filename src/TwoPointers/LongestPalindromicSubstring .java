@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers;;
 
 public class LongestPalindromicSubstring {
     private static int expand(String str, int left, int right) {
