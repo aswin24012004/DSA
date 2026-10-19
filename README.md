@@ -1,92 +1,70 @@
 # DSA Practice Repository
 
-This repository is a Java-based collection of Data Structures and Algorithms (DSA) practice problems and implementations. It is organized by topic to help with focused learning and interview preparation.
+A collection of Java implementations and practice problems for data structures, algorithms, and common interview patterns. Source files are grouped by topic under `src/`.
 
-## Overview
+## Topics
 
-The goal of this project is to build a strong understanding of core DSA concepts through hands-on problem-solving in Java. Each folder contains targeted exercises covering common patterns and techniques.
-
-## Topics Covered
-
-- Arrays
-- Binary Search
+- Arrays and prefix sums
+- Binary search
 - Hashing
-- Matrix
+- Linked lists
+- Matrices
 - Sorting
-- String Manipulation
-- Two Pointers
+- String algorithms
+- Two-pointer techniques
+- Additional practice problems in `mustsolve/`
 
-## Repository Structure
+## Source Layout
 
 ```text
-DSA/
-├── .gitignore
-├── .idea/
-├── DSA.iml
-├── README.md
-├── src/
-│   ├── array/
-│   ├── BinarySearch/
-│   ├── Hasing/
-│   ├── Matrix/
-│   ├── sorting/
-│   ├── String/
-│   ├── TwoPointers/
-│   ├── Main.java
-│   └── ...
-└── ...
+src/
+├── array/
+├── BinarySearch/
+├── Hasing/
+│   └── matrix/
+├── linkedlist/
+│   ├── implementation/
+│   └── problems/
+├── Matrix/
+├── mustsolve/
+├── sorting/
+├── String/
+├── TwoPointers/
+└── Main.java
 ```
 
-## Examples of Included Problems
+Package names follow the source folder structure. Existing capitalization and the `Hasing` spelling are retained in the folder/package names.
 
-- Array problems: reverse array, contiguous subarray logic, maximum product, prefix/sum-based patterns
-- Binary search problems: search in rotated arrays, peak element, square root, first/last occurrence
-- Hashing problems: two sum, intersection of arrays, longest consecutive sequence
-- Matrix problems: spiral matrix traversal
-- Sorting problems: cyclic sort, merge sorted array, first missing positive, wiggle sort
-- String problems: reverse words, longest palindrome, valid palindrome, capitalization
-- Two-pointer problems: trapping rain water, three pointers, sorted squares
+## Requirements
 
-## How to Run
+- JDK 24 (or a compatible JDK configured in your IDE)
+- PowerShell for the commands below
 
-This repository contains standalone Java files, so you can compile and run them individually from their folder.
+## Build and Run
 
-Example:
+Run these commands from the repository root. Compiling all sources together keeps package names and cross-file types resolvable:
 
-```bash
-cd src/array
-javac ReverseArray.java
-java ReverseArray
+```powershell
+$out = Join-Path $env:TEMP 'DSA-build'
+New-Item -ItemType Directory -Force -Path $out | Out-Null
+javac -d $out (Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName })
 ```
 
-You can also run the default `Main.java` entry point from the `src` folder:
+Run the default entry point:
 
-```bash
-cd src
-javac Main.java
-java Main
+```powershell
+java -cp $out Main
 ```
+
+To run an individual class, use its fully qualified package name. For example:
+
+```powershell
+java -cp $out array.MaximumProduct
+```
+
+The `.project` and `.classpath` files identify `src` as the Java source root for Eclipse-based Java tooling.
 
 ## Notes
 
-- The repository is currently focused on learning and practicing algorithmic patterns.
-- Some folder names follow the original naming conventions used during development, such as `Hasing`.
-- This is a good base for expanding into more advanced DSA topics like graphs, trees, stacks, queues, heaps, and dynamic programming.
-
-## Future Improvements
-
-Potential next steps for the project:
-
-- Add explanations and comments for each algorithm
-- Include time and space complexity analysis
-- Group problems by difficulty level
-- Add LeetCode/Codeforces-style problem links
-- Add a `topics` section or roadmap for structured learning
-
-## License
-
-This project currently does not include a license file. If you plan to share or distribute it publicly, consider adding an appropriate open-source license.
-
-## Connect
-
-This repository is a personal learning project for mastering DSA in Java.
+- Most classes are independent exercises with their own `main` method or callable solution method; there is no single application workflow.
+- The repository does not currently include a license file.
