@@ -13,6 +13,7 @@ A collection of Java implementations and practice problems for data structures, 
 - String algorithms
 - Two-pointer techniques
 - Additional practice problems in `mustsolve/`
+- Trees
 
 ## Source Layout
 
