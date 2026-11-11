@@ -10,6 +10,8 @@ out/
 .project
 .settings
 .springBeans
+.apt_generated
+
 .sts4-cache
 bin/
 !**/src/main/**/bin/
