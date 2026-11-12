@@ -12,6 +12,9 @@ public class Recursion {
         // Print numbers from 5 to 1
         printNumberReverse(5);
 
+        // Print numbers from 1 to n
+        printNumbersFrom(10);
+
         // Factorial of a number
         System.out.println("Factorial: " + fact(5));
 
@@ -39,6 +42,15 @@ public class Recursion {
 
         printNumbersFromStart(n + 1);
     }
+     // Print numbers from 1 to n
+    static void printNumbersFrom(int n) {
+
+        if (n == 0) {
+            return;
+        }
+        printNumbersFrom(n - 1);
+        System.out.println(n);
+     }
 
     // Print numbers from 5 to 1
     static void printNumberReverse(int n) {
