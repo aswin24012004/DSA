@@ -2,16 +2,19 @@ package recursion;
 
 public class Recursion {
 
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stubS
-		// System.out.println("Recursion");
+		 System.out.println("Recursion");
 		printNumbersFromStart(1);
 		printNumberReverse(5);
 		System.out.println(fact(5));
 		System.out.println(sumOfDigits(5234 ));
 		System.out.println(productOfDigits(5234));
 		System.out.println(reverseDigits(5234));
+		System.out.println(reverseDigits1(5234));
 
+		
 
 	}
 	
@@ -42,12 +45,24 @@ public class Recursion {
 		if(n%10 == n) return n;
 		return (n%10) * productOfDigits(n/10);
 	}
-	
+	static int rev = 0;
 	static int reverseDigits(int n) {
-		if(n%10 == n) return n;
-		return (n%10) * productOfDigits(n/10);
+		if(n == 0) return rev;
+		int digit = n%10;
+		rev = rev * 10 + digit;
+		return reverseDigits(n/10);
 	}
 	
-	
+	static int reverseDigits1(int n) {
+		int rev=0;
+		return revDigit(n, rev);
+	}
+	static int revDigit(int n, int re) {
+		if(n==0)return re;
+		int digit = n%10;
+		re = re*10+digit;
+		return revDigit(n/10,re);
+		
+	}
 
 }
