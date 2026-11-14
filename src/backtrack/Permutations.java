@@ -6,6 +6,7 @@ import java.util.List;
 public class Permutations {
     static void main() {
         int[] arr = {1, 2, 3};
+                System.out.println("Permutations");
         System.out.println(findPermutations(arr));
 
     }
