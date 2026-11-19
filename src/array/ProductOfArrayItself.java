@@ -31,6 +31,7 @@ public class ProductOfArrayItself {
 
         int[] a = {1, 2, 3, 4};
         int[] result = solution(a);
+        System.out.println("Product of array Itself");
         System.out.println(Arrays.toString(result));
     }
 }
