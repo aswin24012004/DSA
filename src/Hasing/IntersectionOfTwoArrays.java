@@ -32,5 +32,7 @@ public class IntersectionOfTwoArrays {
         for(int i: ans) {
             System.out.print(i+" ");
         }
+
+        SOUT();
     }
 }
